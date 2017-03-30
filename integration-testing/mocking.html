@@ -1,0 +1,773 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Mocking · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="partial-matching.html" />
+    
+    
+    <link rel="prev" href="state.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Table of Contents</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../getting-started.html">
+            
+                <a href="../getting-started.html">
+            
+                    
+                    Getting Started
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Integration Testing
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="effect-creators.html">
+            
+                <a href="effect-creators.html">
+            
+                    
+                    Effect Creators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="dispatching.html">
+            
+                <a href="dispatching.html">
+            
+                    
+                    Dispatching
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="timeout.html">
+            
+                <a href="timeout.html">
+            
+                    
+                    Timeout
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="state.html">
+            
+                <a href="state.html">
+            
+                    
+                    State
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.5" data-path="mocking.html">
+            
+                <a href="mocking.html">
+            
+                    
+                    Mocking
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="partial-matching.html">
+            
+                <a href="partial-matching.html">
+            
+                    
+                    Partial Matching
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="negated-assertions.html">
+            
+                <a href="negated-assertions.html">
+            
+                    
+                    Negated Assertions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="forked-sagas.html">
+            
+                <a href="forked-sagas.html">
+            
+                    
+                    Forked Sagas
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../unit-testing/">
+            
+                <a href="../unit-testing/">
+            
+                    
+                    Unit Testing
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../unit-testing/error-messages.html">
+            
+                <a href="../unit-testing/error-messages.html">
+            
+                    
+                    Error Messages
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../unit-testing/effect-creators.html">
+            
+                <a href="../unit-testing/effect-creators.html">
+            
+                    
+                    Effect Creators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../unit-testing/saga-helpers.html">
+            
+                <a href="../unit-testing/saga-helpers.html">
+            
+                    
+                    Saga Helpers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../unit-testing/general-assertions.html">
+            
+                <a href="../unit-testing/general-assertions.html">
+            
+                    
+                    General Assertions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../unit-testing/time-travel.html">
+            
+                <a href="../unit-testing/time-travel.html">
+            
+                    
+                    Time Travel
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Mocking</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="mocking">Mocking</h1>
+<p>Sometimes integration testing sagas can be laborious, especially when you have
+to mock server APIs for <code>call</code> or create fake state and selectors to use with
+<code>select</code>.</p>
+<p>To make tests simpler, Redux Saga Test Plan allows you to intercept and handle
+effect creators instead of letting Redux Saga handle them. This is similar to a
+middleware layer that Redux Saga Test Plan calls <em>providers</em>.</p>
+<p>To use providers, you can call the <code>provide</code> method. The <code>provide</code> method takes
+one argument, an object literal with effect creator names as keys and function
+handlers as arguments. Each function handler takes two arguments, the yielded
+effect and a <code>next</code> callback. You can inspect the effect and return a fake value
+based on the properties in the effect. If you don&apos;t want to handle the effect
+yourself, you can pass it on to Redux Saga by invoking the <code>next</code> callback
+parameter.</p>
+<p>Here is an example with Jest to show you how to supply a fake value for an API
+call:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> { call, put, take } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;redux-saga/effects&apos;</span>;
+<span class="hljs-keyword">import</span> { expectSaga } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;redux-saga-test-plan&apos;</span>;
+<span class="hljs-keyword">import</span> api <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;my-api&apos;</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">saga</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> action = <span class="hljs-keyword">yield</span> take(<span class="hljs-string">&apos;REQUEST_USER&apos;</span>);
+  <span class="hljs-keyword">const</span> id = action.payload;
+
+  <span class="hljs-keyword">const</span> user = <span class="hljs-keyword">yield</span> call(api.fetchUser, id);
+
+  <span class="hljs-keyword">yield</span> put({ type: <span class="hljs-string">&apos;RECEIVE_USER&apos;</span>, payload: user });
+}
+
+it(<span class="hljs-string">&apos;provides a value for the API call&apos;</span>, () =&gt; {
+  <span class="hljs-keyword">return</span> expectSaga(saga)
+    .provide({
+      call(effect, next) {
+        <span class="hljs-comment">// Check for the API call to return fake value</span>
+        <span class="hljs-keyword">if</span> (effect.fn === api.fetchUser) {
+          <span class="hljs-keyword">const</span> id = effect.args[<span class="hljs-number">0</span>];
+          <span class="hljs-keyword">return</span> { id, name: <span class="hljs-string">&apos;John Doe&apos;</span> };
+        }
+
+        <span class="hljs-comment">// Allow Redux Saga to handle other `call` effects</span>
+        <span class="hljs-keyword">return</span> next();
+      },
+    })
+    .put({
+      type: <span class="hljs-string">&apos;RECEIVE_USER&apos;</span>,
+      payload: { id: <span class="hljs-number">1</span>, name: <span class="hljs-string">&apos;John Doe&apos;</span> },
+    })
+    .dispatch({ type: <span class="hljs-string">&apos;REQUEST_USER&apos;</span>, payload: <span class="hljs-number">1</span> })
+    .run();
+});
+</code></pre>
+<h2 id="effect-creators">Effect Creators</h2>
+<p>Even though you&apos;ll probably never need them all, you can supply a provider for
+almost every effect creator*:</p>
+<ul>
+<li><code>actionChannel</code></li>
+<li><code>call</code></li>
+<li><code>cancel</code></li>
+<li><code>cancelled</code></li>
+<li><code>cps</code></li>
+<li><code>flush</code></li>
+<li><code>fork</code></li>
+<li><code>join</code></li>
+<li><code>parallel</code> (handle yielded arrays)</li>
+<li><code>put</code></li>
+<li><code>race</code></li>
+<li><code>select</code></li>
+<li><code>spawn</code></li>
+<li><code>take</code></li>
+</ul>
+<p>*Because there is no way to distinguish the <code>apply</code> and <code>call</code> effects, you</p>
+<p>*To handle <code>take.maybe</code> and <code>put.resolve</code>, use the <code>take</code> and <code>put</code> providers,
+respectively. You can inspect <code>take</code> effects for the <code>maybe</code> property and <code>put</code>
+effects for the <code>resolve</code> property.</p>
+<h2 id="examples">Examples</h2>
+<h4 id="select">Select</h4>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> { put, select } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;redux-saga/effects&apos;</span>;
+<span class="hljs-keyword">import</span> { expectSaga } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;redux-saga-test-plan&apos;</span>;
+<span class="hljs-keyword">import</span> { selectors } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;my-selectors&apos;</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">saga</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> name = <span class="hljs-keyword">yield</span> select(selectors.getName);
+  <span class="hljs-keyword">const</span> age = <span class="hljs-keyword">yield</span> select(selectors.getAge);
+
+  <span class="hljs-keyword">yield</span> put({ type: <span class="hljs-string">&apos;USER&apos;</span>, payload: { name, age } });
+}
+
+it(<span class="hljs-string">&apos;provides a value for the selector&apos;</span>, () =&gt; {
+  <span class="hljs-keyword">return</span> expectSaga(saga)
+    .provide({
+      select({ selector }, next) {
+        <span class="hljs-keyword">if</span> (selector === selectors.getName) {
+          <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;Tucker&apos;</span>;
+        }
+
+        <span class="hljs-keyword">if</span> (selector === selectors.getAge) {
+          <span class="hljs-keyword">return</span> <span class="hljs-number">11</span>;
+        }
+
+        <span class="hljs-keyword">return</span> next();
+      },
+    })
+    .put({
+      type: <span class="hljs-string">&apos;USER&apos;</span>,
+      payload: { name: <span class="hljs-string">&apos;Tucker&apos;</span>, age: <span class="hljs-number">11</span> },
+    })
+    .run();
+});
+</code></pre>
+<h4 id="parallel-effects">Parallel Effects</h4>
+<p>Providers work on effects yielded inside an array:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> { put, select } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;redux-saga/effects&apos;</span>;
+<span class="hljs-keyword">import</span> { expectSaga } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;redux-saga-test-plan&apos;</span>;
+<span class="hljs-keyword">import</span> { selectors } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;my-selectors&apos;</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">saga</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> [name, age] = <span class="hljs-keyword">yield</span> [
+    select(selectors.getName),
+    select(selectors.getAge),
+  ];
+
+  <span class="hljs-keyword">yield</span> put({ type: <span class="hljs-string">&apos;USER&apos;</span>, payload: { name, age } });
+}
+
+it(<span class="hljs-string">&apos;provides values for effects inside arrays&apos;</span>, () =&gt; {
+  <span class="hljs-keyword">return</span> expectSaga(saga)
+    .provide({
+      select({ selector }, next) {
+        <span class="hljs-keyword">if</span> (selector === selectors.getName) {
+          <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;Tucker&apos;</span>;
+        }
+
+        <span class="hljs-keyword">if</span> (selector === selectors.getAge) {
+          <span class="hljs-keyword">return</span> <span class="hljs-number">11</span>;
+        }
+
+        <span class="hljs-keyword">return</span> next();
+      },
+    })
+    .put({
+      type: <span class="hljs-string">&apos;USER&apos;</span>,
+      payload: { name: <span class="hljs-string">&apos;Tucker&apos;</span>, age: <span class="hljs-number">11</span> },
+    })
+    .run();
+});
+</code></pre>
+<p>Or you can provide a value for the entire array of effects:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> { put, select } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;redux-saga/effects&apos;</span>;
+<span class="hljs-keyword">import</span> { expectSaga } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;redux-saga-test-plan&apos;</span>;
+<span class="hljs-keyword">import</span> { selectors } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;my-selectors&apos;</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">saga</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> [name, age] = <span class="hljs-keyword">yield</span> [
+    select(selectors.getName),
+    select(selectors.getAge),
+  ];
+
+  <span class="hljs-keyword">yield</span> put({ type: <span class="hljs-string">&apos;USER&apos;</span>, payload: { name, age } });
+}
+
+it(<span class="hljs-string">&apos;provides a value for the entire array&apos;</span>, () =&gt; {
+  <span class="hljs-keyword">return</span> expectSaga(saga)
+    .provide({
+      parallel: () =&gt; [<span class="hljs-string">&apos;Tucker&apos;</span>, <span class="hljs-number">11</span>],
+    })
+    .put({
+      type: <span class="hljs-string">&apos;USER&apos;</span>,
+      payload: { name: <span class="hljs-string">&apos;Tucker&apos;</span>, age: <span class="hljs-number">11</span> },
+    })
+    .run();
+});
+</code></pre>
+<h4 id="race">Race</h4>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> { call, put, race, take } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;redux-saga/effects&apos;</span>;
+<span class="hljs-keyword">import</span> { expectSaga } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;redux-saga-test-plan&apos;</span>;
+<span class="hljs-keyword">import</span> api <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;my-api&apos;</span>;
+
+<span class="hljs-keyword">const</span> delay = time =&gt; (
+  <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(resolve =&gt; setTimeout(resolve, time))
+);
+
+<span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">saga</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> action = <span class="hljs-keyword">yield</span> take(<span class="hljs-string">&apos;REQUEST_USER&apos;</span>);
+  <span class="hljs-keyword">const</span> id = action.payload;
+
+  <span class="hljs-keyword">const</span> { user } = <span class="hljs-keyword">yield</span> race({
+    user: call(api.fetchUser, id),
+    timeout: call(delay, <span class="hljs-number">500</span>),
+  });
+
+  <span class="hljs-keyword">if</span> (user) {
+    <span class="hljs-keyword">yield</span> put({ type: <span class="hljs-string">&apos;RECEIVE_USER&apos;</span>, payload: user });
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">yield</span> put({ type: <span class="hljs-string">&apos;TIMEOUT&apos;</span> });
+  }
+}
+
+test(<span class="hljs-string">&apos;fetching the user succeeds&apos;</span>, () =&gt; {
+  <span class="hljs-keyword">const</span> fakeUser = { id: <span class="hljs-number">1</span>, name: <span class="hljs-string">&apos;John Doe&apos;</span> };
+
+  <span class="hljs-keyword">return</span> expectSaga(saga)
+    .provide({
+      race: () =&gt; ({ user: fakeUser }),
+    })
+    .put({ type: <span class="hljs-string">&apos;RECEIVE_USER&apos;</span>, payload: fakeUser })
+    .dispatch({ type: <span class="hljs-string">&apos;REQUEST_USER&apos;</span> })
+    .run();
+});
+
+test(<span class="hljs-string">&apos;timeout wins&apos;</span>, () =&gt; {
+  <span class="hljs-keyword">return</span> expectSaga(saga)
+    .provide({
+      race: () =&gt; ({ timeout: <span class="hljs-literal">undefined</span> }),
+    })
+    .put({ type: <span class="hljs-string">&apos;TIMEOUT&apos;</span> })
+    .dispatch({ type: <span class="hljs-string">&apos;REQUEST_USER&apos;</span> })
+    .run();
+});
+</code></pre>
+<h4 id="errors">Errors</h4>
+<p>You can simulate errors by throwing from a provider:</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">saga</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> action = <span class="hljs-keyword">yield</span> take(<span class="hljs-string">&apos;REQUEST_USER&apos;</span>);
+  <span class="hljs-keyword">const</span> id = action.payload;
+
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">const</span> user = <span class="hljs-keyword">yield</span> call(api.fetchUser, id);
+
+    <span class="hljs-keyword">yield</span> put({ type: <span class="hljs-string">&apos;RECEIVE_USER&apos;</span>, payload: user });
+  } <span class="hljs-keyword">catch</span> (e) {
+    <span class="hljs-keyword">yield</span> put({ type: <span class="hljs-string">&apos;FAIL_USER&apos;</span>, error: e });
+  }
+}
+
+it(<span class="hljs-string">&apos;can throw errors in the saga&apos;</span>, () =&gt; {
+  <span class="hljs-keyword">const</span> error = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&apos;Whoops...&apos;</span>);
+
+  <span class="hljs-keyword">return</span> expectSaga(saga)
+    .provide({
+      call(effect, next) {
+        <span class="hljs-keyword">if</span> (effect.fn === api.fetchUser) {
+          <span class="hljs-keyword">throw</span> error;
+        }
+
+        <span class="hljs-keyword">return</span> next();
+      },
+    })
+    .put({ error, type: <span class="hljs-string">&apos;FAIL_USER&apos;</span> })
+    .dispatch({ type: <span class="hljs-string">&apos;REQUEST_USER&apos;</span>, payload: <span class="hljs-number">1</span> })
+    .run();
+});
+</code></pre>
+<h4 id="providing-in-forkedspawned-tasks">Providing in forked/spawned tasks</h4>
+<p>To ensure that the <code>fork</code> and <code>spawn</code> assertion methods work properly, providers
+will not automatically work inside forked/spawned tasks. To provide values
+inside forked/spawned tasks, include <code>provideInForkedTasks: true</code> as an
+additional key-value pair in the providers object literal. <strong>Note:</strong> Redux Saga
+Test Plan has to wrap forked/spawned sagas in a middleware saga to provide
+values in them, so the <code>fork</code> and <code>spawn</code> assertion methods won&apos;t work properly
+if you&apos;re providing values in forked/spawned tasks.</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> { fork, put } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;redux-saga/effects&apos;</span>;
+<span class="hljs-keyword">import</span> { expectSaga } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;redux-saga-test-plan&apos;</span>;
+<span class="hljs-keyword">import</span> api <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;my-api&apos;</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">fetchUserSaga</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> user = <span class="hljs-keyword">yield</span> call(api.fetchUser);
+  <span class="hljs-keyword">yield</span> put({ type: <span class="hljs-string">&apos;RECEIVE_USER&apos;</span>, payload: user });
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">forkingSaga</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">yield</span> fork(fetchUserSaga);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">spawningSaga</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">yield</span> spawn(fetchUserSaga);
+}
+
+it(<span class="hljs-string">&apos;provides values in forked sagas&apos;</span>, () =&gt; {
+  <span class="hljs-keyword">return</span> expectSaga(forkingSaga)
+    .provide({
+      provideInForkedTasks: <span class="hljs-literal">true</span>,
+
+      call({ fn }, next) {
+        <span class="hljs-keyword">if</span> (fn === api.fetchUser) {
+          <span class="hljs-keyword">return</span> fakeUser;
+        }
+
+        <span class="hljs-keyword">return</span> next();
+      },
+    })
+    .put({ type: <span class="hljs-string">&apos;RECEIVE_USER&apos;</span>, payload: fakeUser })
+    .run();
+});
+
+it(<span class="hljs-string">&apos;provides values in spawned sagas&apos;</span>, () =&gt; {
+  <span class="hljs-keyword">return</span> expectSaga(spawningSaga)
+    .provide({
+      provideInForkedTasks: <span class="hljs-literal">true</span>,
+
+      call({ fn }, next) {
+        <span class="hljs-keyword">if</span> (fn === api.fetchUser) {
+          <span class="hljs-keyword">return</span> fakeUser;
+        }
+
+        <span class="hljs-keyword">return</span> next();
+      },
+    })
+    .put({ type: <span class="hljs-string">&apos;RECEIVE_USER&apos;</span>, payload: fakeUser })
+    .run();
+});
+</code></pre>
+<h4 id="more">More</h4>
+<p>For some more contrived examples of providers, look in the
+<a href="https://github.com/jfairbank/redux-saga-test-plan/tree/master/__tests__/expectSaga/provide.test.js" target="_blank"><code>expectSaga/provide.test.js</code> file</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="state.html" class="navigation navigation-prev " aria-label="Previous page: State">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="partial-matching.html" class="navigation navigation-next " aria-label="Next page: Partial Matching">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Mocking","level":"1.3.5","depth":2,"next":{"title":"Partial Matching","level":"1.3.6","depth":2,"path":"integration-testing/partial-matching.md","ref":"integration-testing/partial-matching.md","articles":[]},"previous":{"title":"State","level":"1.3.4","depth":2,"path":"integration-testing/state.md","ref":"integration-testing/state.md","articles":[]},"dir":"ltr"},"config":{"plugins":["advanced-emoji","github"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/jfairbank/redux-saga-test-plan"},"advanced-emoji":{"embedEmojis":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"3.2.2"},"file":{"path":"integration-testing/mocking.md","mtime":"2017-03-30T00:22:16.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-30T00:24:16.392Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
